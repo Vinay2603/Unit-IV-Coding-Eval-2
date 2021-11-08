@@ -82,7 +82,7 @@ function tocart( ){
       console.log(event.srcElement.textContent)
 
       let meal_from_cart = JSON.parse(localStorage.getItem('meal_to_cart'))
-
+      
       let z = meal_from_cart[meal_from_cart.length -1]
 
       let myanswer = z.filter((el)=>{
@@ -98,7 +98,7 @@ function tocart( ){
     
 let myans= JSON.parse(localStorage.getItem('myans'))
 
-myans.push(myanswer)
+myans.push(z)
 
 localStorage.setItem('myans',JSON.stringify(myans))
 
