@@ -58,24 +58,28 @@
  
        user_data_tosent  = JSON.stringify(user_data)
 
-       fetch(`https://masai-api-mocker.herokuapp.com/auth/register`,{
+       fetch("https://masai-api-mocker.herokuapp.com/auth/register",{
 
-        method: 'POST',
-        body:user_data_tosent,
-        headers:{
-            'Content-Type':'application/json',
-        },
-       })
-       .then((res)=>{
-            return res.json()
-       })
-       .then((res)=>{
-           console.log('res:', res)
-           console.log('weded')
-       })
-        .catch((err)=>{
-            console.log('err:', err)
-        })
+     method:'POST',
+
+    body:user_data ,
+
+     headers:{
+    
+    'Content-Type':'application/json',
+
+    },
+  })
+  .then ((res)=>{
+
+    return res.json()
+   })
+   .then((res)=>{
+   console.log(' res:',  res)
+   })
+   .catch((err)=>{
+    console.log('err:', err)
+   })
 
       }
     </script>
