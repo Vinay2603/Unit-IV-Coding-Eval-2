@@ -90,6 +90,19 @@ function tocart( ){
         return click_result == el.strMeal
       })
      console.log('myanswer:', myanswer)
+
+     if(localStorage.getItem('myans') === null ){
+
+    localStorage.setItem('myans',JSON.stringify([]))
+     
+    
+let myans= JSON.parse(localStorage.getItem('myans'))
+
+myans.push(myanswer)
+
+localStorage.setItem('myans',JSON.stringify(myans))
+
+}
 }
     
  function to_localstorage(meal){

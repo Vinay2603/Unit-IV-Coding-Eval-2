@@ -57,14 +57,14 @@ let container = document.getElementById('container')
   }
 
 function cart_order(){
-  let meal_from_cart = JSON.parse(localStorage.getItem('meal_to_cart'))
+  let meal_from_cart = JSON.parse(localStorage.getItem('myans'))
 
  console.log(meal_from_cart)
 
  let last = meal_from_cart[meal_from_cart.length -1 ]
      
  console.log(last[0])
-  let x= last[0]
+ 
  
  last.forEach((meal)=>{
 
