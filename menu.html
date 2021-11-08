@@ -81,8 +81,15 @@ function tocart( ){
       let click_result = event.srcElement.textContent
       console.log(event.srcElement.textContent)
 
-     
+      let meal_from_cart = JSON.parse(localStorage.getItem('meal_to_cart'))
 
+      let z = meal_from_cart[meal_from_cart.length -1]
+
+      let myanswer = z.filter((el)=>{
+
+        return click_result == el.strMeal
+      })
+     console.log('myanswer:', myanswer)
 }
     
  function to_localstorage(meal){
