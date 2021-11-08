@@ -29,7 +29,7 @@
     
 <script>
 
-let container = document.getElementById('container')
+let container1 = document.getElementById('container')
 
   function complete(){
       alert('Order is accepted')
@@ -57,7 +57,7 @@ let container = document.getElementById('container')
   }
 
 function cart_order(){
-  let meal_from_cart = JSON.parse(localStorage.getItem('myans'))
+  let meal_from_cart = JSON.parse(localStorage.getItem('meal_to_cart'))
 
  console.log(meal_from_cart)
 
@@ -65,8 +65,8 @@ function cart_order(){
      
  console.log(last[0])
  
- 
- last.forEach((meal)=>{
+ let x= meal_from_cart[0]
+ x.forEach((meal)=>{
 
 let div = document.createElement('div')
 
@@ -83,7 +83,7 @@ price.innerText = 'price: '+ Math.round(Math.random()*1000)
 
 
 div.append(name,img,price)
-container.append(div)
+container1.append(div)
 })
 
 }
