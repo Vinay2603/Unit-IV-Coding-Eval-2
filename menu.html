@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-      
+     <button><a href="index.html">back</a></button> 
     <div id="container" >
 
     </div>
@@ -41,7 +41,8 @@
 
          console.log('data:', data.meals)
          append_data( data.meals)
-
+        
+         to_localstorage(data.meals)
      }
 
      showproduct()
@@ -65,6 +66,7 @@
 
     let add_to_cart = document.createElement('button')
     add_to_cart.innerText = 'add to cart'
+    add_to_cart.addEventListener('onclick',tocart)
 
    let discription = document.createElement('p')
    discription.innerText = meal.strInstructions
@@ -75,7 +77,26 @@
 
 
     }
+function tocart( ){
+      let click_result = event.srcElement.textContent
+      console.log(event.srcElement.textContent)
 
+     
+
+}
+    
+ function to_localstorage(meal){
+    if(localStorage.getItem('meal_to_cart') === null ){
+
+localStorage.setItem('meal_to_cart',JSON.stringify([]))
+}
+
+let meal_to_cart= JSON.parse(localStorage.getItem('meal_to_cart'))
+
+meal_to_cart.push(meal)
+
+localStorage.setItem('meal_to_cart',JSON.stringify(meal_to_cart))
+ }
     </script>
 </body>
 </html>

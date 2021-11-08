@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <style>
+ .b{
+     display: flex;
+     justify-content: space-between;
+     padding-left: 30px;
+     padding-right: 800px;
+ }
+ 
+    </style>
+</head>
+<body>
+    <div class="b">
+    <button><a href="index.html">back</a></button> 
+    <button  class="place" onclick="complete()">PLACE ORDER</button>
+    </div>
+    <div >
+     <h1>ORDERS</h1>
+         <div class="container">
+              
+         </div>
+    </div>
+    
+<script>
+
+let container = document.getElementById('container')
+
+  function complete(){
+      alert('Order is accepted')
+
+      let timer1 = setTimeout(()=>{
+        alert('Your order is being cooked')
+
+      },3000)
+
+      let timer2 = setTimeout(()=>{
+        alert('Your order is ready')
+
+      },8000)
+
+      let timer3 = setTimeout(()=>{
+        alert('Order out for delivery')
+
+      },10000)
+
+
+      let timer4 = setTimeout(()=>{
+        alert('Order delivered')
+
+      },13000)
+  }
+
+function cart_order(){
+  let meal_from_cart = JSON.parse(localStorage.getItem('meal_to_cart'))
+
+ console.log(meal_from_cart)
+
+ let last = meal_from_cart[meal_from_cart.length -1 ]
+     
+ console.log(last[0])
+  let x= last[0]
+ 
+ last.forEach((meal)=>{
+
+let div = document.createElement('div')
+
+let  name = document.createElement('p')
+name.innerText = meal.strMeal
+// name.setAttribute('id','name')
+
+let img = document.createElement('img')
+ img.src = meal.strMealThumb
+// img.setAttribute('id','img')
+
+let price = document.createElement('p')
+price.innerText = 'price: '+ Math.round(Math.random()*1000) 
+
+
+div.append(name,img,price)
+container.append(div)
+})
+
+}
+cart_order()
+</script>
+
+
+
+
+</body>
+</html>
