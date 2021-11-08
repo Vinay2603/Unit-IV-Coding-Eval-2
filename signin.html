@@ -57,6 +57,8 @@
      })
      .then((res)=>{
          console.log('res:', res)
+         fetchData( user_data.name,res.token)
+
      })
      .catch((err)=>{
          console.log('err:', err)
@@ -66,7 +68,27 @@
 
   }
 
+function fetchData(username,token){
+     fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
+         headers:{
+             'Content-Type':'application/json',
+             Authorization: `Bearer ${token}`,
+         },
+     })
+     .then((res)=>{
+         return res.json()
+     })
+     .then((res)=>{
+         console.log('res:', res)
+   
+         
 
+     })
+     .catch((err)=>{
+         console.log('err:', err)
+     })
+   
+}
 
 
     </script>
